@@ -1279,6 +1279,7 @@ animation-iteration-count: 1 !important;
 }
 }
 
+
 /* ========================================
 NEXORA — DEPOSIT ADDRESS SECTION
 ======================================== */
@@ -1387,6 +1388,7 @@ background: rgba(247, 147, 26, 0.12);
 color: #a5b4fc;
 background: rgba(129, 140, 248, 0.13);
 }
+
 .deposit-coin-icon.usdt {
 color: #34d399;
 background: rgba(16, 185, 129, 0.12);
@@ -1413,8 +1415,114 @@ align-items: center;
 gap: 10px;
 padding: 12px;
 background: #080e18;
-border
+border: 1px solid #263548;
+border-radius: 12px;
+}
 
+.deposit-wallet-address {
+flex: 1;
+min-width: 0;
+margin: 0;
+color: #dbeafe;
+font-family: monospace;
+font-size: 12px;
+line-height: 1.7;
+overflow-wrap: anywhere;
+word-break: break-word;
+}
+
+.copy-address-button {
+flex-shrink: 0;
+padding: 9px 12px;
+background: rgba(16, 185, 129, 0.12);
+border: 1px solid rgba(16, 185, 129, 0.35);
+border-radius: 9px;
+color: #34d399;
+font-size: 12px;
+font-weight: 750;
+cursor: pointer;
+}
+
+.copy-address-button:hover {
+background: #10b981;
+color: #04130e;
+}
+
+.copy-address-button:active {
+transform: scale(0.97);
+}
+
+#depositMessage {
+margin: 20px 0;
+color: #94a3b8;
+font-size: 13px;
+line-height: 1.6;
+}
+
+.deposit-warning {
+margin: 18px 0;
+padding: 13px 15px;
+background: rgba(245, 158, 11, 0.08);
+border: 1px solid rgba(245, 158, 11, 0.2);
+border-radius: 12px;
+color: #fbbf24;
+font-size: 12px;
+line-height: 1.7;
+}
+
+.deposit-panel .submit-button {
+width: 100%;
+margin-top: 8px;
+}
+
+/* Larger screens */
+@media (min-width: 650px) {
+.deposit-address-list {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.deposit-address-card:first-child {
+grid-column: 1 / -1;
+}
+}
+
+/* Small Android screens */
+@media (max-width: 380px) {
+.deposit-panel {
+padding: 15px;
+}
+
+.deposit-address-card {
+padding: 13px;
+}
+
+.deposit-address-box {
+align-items: flex-start;
+flex-direction: column;
+}
+
+.copy-address-button {
+width: 100%;
+}
+}
+
+/* =========================================
+NEXORA — TWO-SCREEN CRYPTO DEPOSIT
+========================================= */
+
+.deposit-panel {
+width: 100%;
+max-width: 760px;
+margin: 0 auto;
+padding: 24px;
+box-sizing: border-box;
+background: #0d1420;
+border: 1px solid #202c3b;
+border-radius: 20px;
+color: #f1f5f9;
+}
+
+/* Header */
 
 .deposit-header {
 margin-bottom: 24px;
@@ -1467,6 +1575,7 @@ border-color: #20d99a;
 background: #142536;
 outline: none;
 }
+
 .deposit-coin-icon {
 display: flex;
 align-items: center;
@@ -1514,6 +1623,7 @@ margin-left: auto;
 color: #94a3b8;
 font-size: 28px;
 }
+
 /* Deposit details screen */
 
 .deposit-back-button {
@@ -1746,6 +1856,7 @@ height: 175px;
 .deposit-address-card {
 padding: 13px;
 }
+
 .deposit-address-box {
 align-items: stretch;
 flex-direction: column;
@@ -1825,215 +1936,163 @@ font-weight: 700;
 }
 
 /* ===== Deposit details: mobile ===== */
+
 #depositDetailsScreen {
-width: 100%;
-max-width: 100%;
-box-sizing: border-box;
-padding-bottom: 110px; /* space for bottom nav + chat button */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 110px; /* space for bottom nav + chat button */
 }
 
 #depositDetailsScreen *,
 #depositDetailsScreen *::before,
 #depositDetailsScreen *::after {
-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .deposit-back-button {
-font-size: 13px;
-padding: 8px 12px;
-margin-bottom: 14px;
+    font-size: 13px;
+    padding: 8px 12px;
+    margin-bottom: 14px;
 }
 
 .deposit-asset-heading {
-display: flex;
-align-items: center;
-gap: 12px;
-margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
 }
 
 .deposit-asset-heading h2 {
-font-size: 20px;
-margin: 0;
+    font-size: 20px;
+    margin: 0;
 }
 
 .deposit-coin-icon {
-width: 44px;
-height: 44px;
-flex-shrink: 0;
-display: grid;
-place-items: center;
-border-radius: 50%;
-font-size: 22px;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-size: 22px;
 }
 
 .deposit-tabs {
-display: flex;
-gap: 8px;
-margin-bottom: 16px;
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
 }
 
 .deposit-tab {
-flex: 1;
-text-align: center;
-padding: 10px 6px;
-font-size: 13px;
-border-radius: 10px;
-border: 1px solid rgba(255, 255, 255, 0.1);
+    flex: 1;
+    text-align: center;
+    padding: 10px 6px;
+    font-size: 13px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .deposit-tab.active {
-background: #10b981;
-color: #04110c;
-font-weight: 600;
-border-color: #10b981;
+    background: #10b981;
+    color: #04110c;
+    font-weight: 600;
+    border-color: #10b981;
 }
 
 .deposit-tab.inactive {
-opacity: 0.55;
+    opacity: 0.55;
 }
 
 .deposit-network-section {
-margin-bottom: 16px;
+    margin-bottom: 16px;
 }
 
 .deposit-network-section label {
-display: block;
-font-size: 13px;
-margin-bottom: 6px;
+    display: block;
+    font-size: 13px;
+    margin-bottom: 6px;
 }
 
 #depositNetwork {
-width: 100%;
-padding: 12px;
-font-size: 14px;
-border-radius: 10px;
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 10px;
 }
 
 .deposit-network-warning {
-font-size: 12px;
-line-height: 1.5;
-margin: 8px 0 0;
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 8px 0 0;
 }
 
 .deposit-qr-section h3 {
-font-size: 16px;
-margin: 0 0 12px;
+    font-size: 16px;
+    margin: 0 0 12px;
 }
 
 .deposit-qr-frame {
-width: 100%;
-max-width: 220px;
-margin: 0 auto 20px;
-padding: 10px;
-background: #fff;
-border-radius: 12px;
-overflow: hidden;
+    width: 100%;
+    max-width: 220px;
+    margin: 0 auto 20px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .deposit-qr-frame img {
-display: block;
-width: 100%;
-height: auto;
-max-width: 100%;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
 }
 
 .deposit-address-card {
-position: relative;
-clear: both;
-padding: 14px;
-margin-bottom: 16px;
+    position: relative;
+    clear: both;
+    padding: 14px;
+    margin-bottom: 16px;
 }
 
 .deposit-address-card label {
-display: block;
-font-size: 12px;
-margin-bottom: 8px;
+    display: block;
+    font-size: 12px;
+    margin-bottom: 8px;
 }
 
 .deposit-address-box {
-display: flex;
-flex-direction: column;
-gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .deposit-wallet-address {
-margin: 0;
-font-size: 12px;
-line-height: 1.5;
-word-break: break-all;
-overflow-wrap: anywhere;
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.5;
+    word-break: break-all;
+    overflow-wrap: anywhere;
 }
 
 .copy-address-button {
-width: 100%;
-padding: 12px;
-font-size: 14px;
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
 }
 
 .deposit-warning {
-padding: 14px;
-margin-bottom: 16px;
+    padding: 14px;
+    margin-bottom: 16px;
 }
 
 .deposit-warning strong {
-font-size: 14px;
+    font-size: 14px;
 }
 
 .deposit-warning p {
-font-size: 12px;
-line-height: 1.5;
-margin: 6px 0;
-}
-
-
-/* Simulated US bank selection */
-.bank-fields {
-  display: grid;
-  gap: 9px;
-}
-
-.bank-fields select {
-  width: 100%;
-  min-width: 0;
-  padding: 13px 12px;
-  border: 1px solid #2a3b4e;
-  border-radius: 8px;
-  color: #eef5fb;
-  background: #09121d;
-  font-size: 13px;
-}
-
-.bank-LIVE-note {
-  margin: 0;
-  color: #aab9c8;
-  font-size: 11px;
-  line-height: 1.6;
-}
-
-#cryptoDestinationField {
-  display: grid;
-  gap: 9px;
-}
-
-/* Reference-style smooth green area chart */
-#portfolioChart {
-  overflow: visible;
-}
-
-#chartLine {
-  stroke: #20d99a;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-#chartArea {
-  fill: url(#chartGradient);
-}
-
-.disclaimer {
-  margin: 12px 0 0;
-  color: #8394a8;
-  font-size: 10px;
-  line-height: 1.6;
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 6px 0;
 }
